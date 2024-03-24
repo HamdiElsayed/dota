@@ -1,6 +1,9 @@
 # Folders
 data/
 weights/
+wandb/
+
+
 .ipynb_checkpoints/
 src/__pycache__/
 

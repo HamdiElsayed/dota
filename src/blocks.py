@@ -79,16 +79,19 @@ class ConvEncoder(layers.Layer):
         
     def call(self, tokens, energy_token):
         # First convolutional block
+      
         x = self.h1(self.pool1(self.norm1(self.conv1(tokens))))
-        
+       
+     
         # Second convolutional block
         x = self.h2(self.pool2(self.norm2(self.conv2(x))))
-        
+   
         # Last convolution + flatten to 1D vector
         x = self.flatten(self.h3(self.norm3(self.conv3(x))))
-
+      
         # Encode energy and concatenate
         e = self.reshape(self.linear(energy_token))
+       
         x = self.concat([e, x])
 
         # Add positional encoding
