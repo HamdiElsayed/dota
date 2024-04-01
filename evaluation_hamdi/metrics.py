@@ -23,7 +23,7 @@ def gamma_analysis(ground_truth, prediction ,lower_percent_dose_cutoff, dose_per
             np.arange(ground_truth.shape[2]) * resolution[2])
     
     gamma_values = gamma(axes, ground_truth, axes, prediction, dose_percent_threshold,
-                         distance_mm_threshold, lower_percent_dose_cutoff,random_subset=int(np.prod(ground_truth.shape)/10),max_gamma=1.1)
+                         distance_mm_threshold, lower_percent_dose_cutoff,max_gamma=1.1)
     valid_gamma = gamma_values[~np.isnan(gamma_values)]
 
     # Calculate gamma pass rate.
