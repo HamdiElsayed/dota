@@ -1,0 +1,9 @@
+{ 
+	"inshape": [150, 64, 64, 1], 
+	"kernel_size": 5, 
+	"num_heads": 16, 
+	"num_transformers": 1, 
+	"enc_feats": 12,
+	"num_levels": 3,
+	"steps":3
+}
